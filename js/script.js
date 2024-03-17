@@ -8,13 +8,12 @@ import {
     form
 } from "./element.js";
 
-
 let IsFormOpen = false
 
 const fetchData = async () => {
 
     try {
-        const respose = await fetch('https://jsonplaceholder.typicode.com/posts')
+        const respose = await fetch(baseURL + "/posts")
         const data = await respose.json()
 
         const table = document.createElement("table");
@@ -97,9 +96,7 @@ const addPost = async (event) => {
                 },
             }
         );
-
         alert("A new record has been added")
-
     }
     catch (ex) {
         alert(ex.message)
@@ -145,7 +142,6 @@ function makeForm(postInfo = {}, form) {
         bodyInput.value = postInfo.body
     }
 
-
     form.appendChild(titleLabel);
     form.appendChild(titleInput);
     form.appendChild(userId)
@@ -171,7 +167,6 @@ const showForm = () => {
 
     }
 }
-
 
 async function deletePosts(id) {
     try {
@@ -216,9 +211,7 @@ function editPosts(postInfo) {
     makeForm(postInfo, editForm)
 }
 
-
 showButton.addEventListener("click", fetchData)
 add_button.addEventListener("click", showForm)
 form.addEventListener("submit", addPost)
 editForm.addEventListener("submit", updatePosts)
-
