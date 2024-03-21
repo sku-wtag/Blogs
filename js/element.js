@@ -7,3 +7,4 @@ export const editForm = document.createElement('form');
 export const searchBox = document.getElementById("search_box")
 
 export const baseURL = "https://jsonplaceholder.typicode.com"
+

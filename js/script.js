@@ -225,6 +225,7 @@ const debounce = (func, delay) => {
     };
 };
 
+
 const searchPosts = debounce(async (event) => {
     const searchText = searchBox.value.trim().toLowerCase();
     let searchResult = postData.filter((post) => {
